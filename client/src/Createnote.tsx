@@ -3,12 +3,8 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'
 import { useState } from "react";
 import {CREATE_POST_FN} from './Axios/methods/POST'
+import { EventInterface, responseInterface } from "./Interface/common";
 
-interface EventInterface{
-    target:{
-        value: string
-    }
-}
 
 export default function Createnote(){
     const [value, setValue] = useState('');
@@ -20,7 +16,8 @@ export default function Createnote(){
 
     const handleCreatePost =async()=>{
         try{
-            const response = await CREATE_POST_FN({heading,value})
+            const response = await CREATE_POST_FN({heading,value}) as responseInterface
+            console.log(response)
         }catch(err){
             console.log("Error")
         }

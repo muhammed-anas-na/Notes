@@ -4,6 +4,7 @@ import {useDispatch , useSelector} from 'react-redux'
 import { addUser, clearUser } from "./Redux/UserSlice";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CREATE_ACCOUNT_FN } from "./Axios/methods/POST";
 export default function Navbar() {
   const userData = useSelector((store) => store.user.userData)
   const [isLogin, setIsLogin] = useState(false);
@@ -32,6 +33,7 @@ export default function Navbar() {
       dispatch(clearUser());
       dispatch(addUser(userObject));
       setIsLogin(true);
+      const response = await CREATE_ACCOUNT_FN(userObject);
     } catch (error) {
       console.error("Error");
     }

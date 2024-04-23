@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Nodejs server of notes application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.ts --exec ts-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammed-anas-na/Notes.git"
+  },
+  "author": "Anas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammed-anas-na/Notes/issues"
+  },
+  "homepage": "https://github.com/muhammed-anas-na/Notes#readme",
+  "dependencies": {
+    "cookie-session": "^2.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.3.2",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/cookie-session": "^2.0.49",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0"
+  }
+}
